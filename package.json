@@ -1,0 +1,50 @@
+{
+  "_from": "vue-pdf-editor",
+  "_id": "vue-pdf-editor@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-tGjvdiYG8FKZFP2dIF0zcTrNBu2MUkQJ0OxRuc6Tgg4Ea+CSd05FFc/6GfJeQiOofP9W6to4DwnXrOUmIcgtLw==",
+  "_location": "/vue-pdf-editor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "vue-pdf-editor",
+    "name": "vue-pdf-editor",
+    "escapedName": "vue-pdf-editor",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vue-pdf-editor/-/vue-pdf-editor-1.0.0.tgz",
+  "_shasum": "7ad34f0074856e9b8dd0c2ee388936724fb37857",
+  "_spec": "vue-pdf-editor",
+  "_where": "C:\\Users\\Jrue\\Desktop\\homeworkFE",
+  "author": {
+    "name": "d9e7381f"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "loader-utils": "^1.2.3",
+    "pdfjs-dist": "2.0.943",
+    "raw-loader": "^0.5.1",
+    "vue-resize-sensor": "^2.0.0"
+  },
+  "deprecated": false,
+  "description": "vue.js pdf editor,暴露钩子函数对画布进行操作。",
+  "keywords": [
+    "vue.js",
+    "pdf",
+    "viewer",
+    "editor"
+  ],
+  "license": "MIT",
+  "main": "src/vuePdfNoSss.vue",
+  "name": "vue-pdf-editor",
+  "scripts": {},
+  "version": "1.0.0"
+}
