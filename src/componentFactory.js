@@ -76,6 +76,7 @@ export default function(pdfjsWrapper) {
 				this.pdf.loadOriginalDocument(this.originalSrc)
 			},
 			src: function() {
+				this.pdfPageSource = {}
 				this.pdf.loadDocument(this.src);
 			},
 			page: function(newVal, oldVal) {
@@ -99,18 +100,18 @@ export default function(pdfjsWrapper) {
 				this.pdfPageSource[this.page] = true
 				this.pdf.loadPageFromOriginal(this.page, this.rotate)
 			},
-		  mouseDownMethod: function(e) {
-			this.$emit('mouseDownMethod', e)
-		  },
-		  contextMenuMethod: function (e) {
-  			this.$emit('contextmenu', e)
-		  },
-      touchstart: function (e) {
-        this.$emit('touchstart', e)
-      },
-      clickMehotd: function(e) {
-			this.$emit('clickPDF', e)
-		  },
+		    mouseDownMethod: function(e) {
+				this.$emit('mouseDownMethod', e)
+		    },
+		    contextMenuMethod: function (e) {
+  				this.$emit('contextmenu', e)
+		    },
+			touchstart: function (e) {
+				this.$emit('touchstart', e)
+			},
+			clickMehotd: function(e) {
+				this.$emit('clickPDF', e)
+			},
 			resize: function(size) {
 				
 				// check if the element is attached to the dom tree || resizeSensor being destroyed
@@ -135,37 +136,37 @@ export default function(pdfjsWrapper) {
 
 		},
 
-		// doc: mounted hook is not called during server-side rendering.
-		 mounted: function() {
-			 this.pdf = new PDFJSWrapper(this.$refs.canvas, this.$refs.annotationLayer, this.$emit.bind(this));
-
-			this.$on('loaded', function() {
-
-				this.pdf.loadPage(this.page, this.rotate);
-			});
-
-			this.$on('page-size', function(width, height) {
-
-				this.$refs.canvas.style.height = this.$refs.canvas.offsetWidth * (height / width) + 'px';
-			});
-
-			this.pdf.loadDocument(this.src);
-		},
-    activated: function() {
+	// doc: mounted hook is not called during server-side rendering.
+		mounted: function() {
 			this.pdf = new PDFJSWrapper(this.$refs.canvas, this.$refs.annotationLayer, this.$emit.bind(this));
 
-      this.$on('loaded', function() {
+		this.$on('loaded', function() {
 
-        this.pdf.loadPage(this.page, this.rotate);
-      });
+			this.pdf.loadPage(this.page, this.rotate);
+		});
 
-      this.$on('page-size', function(width, height) {
+		this.$on('page-size', function(width, height) {
 
-        this.$refs.canvas.style.height = this.$refs.canvas.offsetWidth * (height / width) + 'px';
-      });
+			this.$refs.canvas.style.height = this.$refs.canvas.offsetWidth * (height / width) + 'px';
+		});
 
-      this.pdf.loadDocument(this.src);
-    },
+		this.pdf.loadDocument(this.src);
+	},
+		activated: function() {
+				this.pdf = new PDFJSWrapper(this.$refs.canvas, this.$refs.annotationLayer, this.$emit.bind(this));
+
+		this.$on('loaded', function() {
+
+			this.pdf.loadPage(this.page, this.rotate);
+		});
+
+		this.$on('page-size', function(width, height) {
+
+			this.$refs.canvas.style.height = this.$refs.canvas.offsetWidth * (height / width) + 'px';
+		});
+
+		this.pdf.loadDocument(this.src);
+		},
 		// doc: destroyed hook is not called during server-side rendering.
 		destroyed: function() {
 
